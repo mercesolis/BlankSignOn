@@ -4,6 +4,8 @@
         <input type="email" formControlName="inputEmail" class="form-control" placeholder="Email Address">
         <label class="alert alert-danger" *ngIf="!this.formSubmit.controls.inputEmail.valid && this.formSubmit.controls.inputEmail.touched">Email Required</label>
         <input type="password" formControlName="inputPassword" class="form-control" placeholder="Password">
+        <label class="alert alert-danger" *ngIf="inputPasswordInvalid">Password Required</label>
         <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSubmit.valid">Sign In</button>
     </form>
+    <a routerLink="/register">Register</a>
 </div>
