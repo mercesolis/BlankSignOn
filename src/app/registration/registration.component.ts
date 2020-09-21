@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -22,7 +23,7 @@ export class RegistrationComponent implements OnInit {
     return this.formSubmit.hasError('passwordError');
   }
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
 
     this.formSubmit = this.formBuilder.group({
       inputEmail: ['', Validators.email],
@@ -37,6 +38,7 @@ export class RegistrationComponent implements OnInit {
 
   submit(): void {
     console.log(this.formSubmit.value);
+    this.router.navigate(['/signin']);
 
   }
 
