@@ -8,14 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
+
 export class UserProfileComponent implements OnInit {
-  
-  constructor(public firstName: string = '',
-                public lastName: string = '',
-                public email: string = '',
-                public password: string = '',
-                public language: string = '') {
-    }
+
+  formSubmit: FormGroup;
+  inputFirstName: FormControl = new FormControl('', Validators.required);
+
+  constructor(private formBuilder: FormBuilder){
+    this.formSubmit = this.formBuilder.group({
+      inputFirstName: ['', Validators.firstName],
+    });
+  }
   
 
   ngOnInit(): void {
