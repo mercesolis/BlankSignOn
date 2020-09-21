@@ -21,8 +21,7 @@ export class SignInComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
 
     this.formSubmit = this.formBuilder.group({
-      inputEmail: ['', Validators.email],
-      inputPassword: this.inputPassword
+      inputEmail: ['', Validators.email], inputPassword: this.inputPassword
     });
    }
 

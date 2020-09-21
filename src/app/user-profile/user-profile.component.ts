@@ -14,9 +14,12 @@ export class UserProfileComponent implements OnInit {
   formSubmit: FormGroup;
   inputFirstName: FormControl = new FormControl('', Validators.required);
 
+  get inputFirstNameInvalid(): boolean {
+    return !this.inputFirstName.valid && this.inputFirstName.touched;
+  }
+
   constructor(private formBuilder: FormBuilder){
-    this.formSubmit = this.formBuilder.group({
-      inputFirstName: ['', Validators.firstName],
+    this.formSubmit = this.formBuilder.group({inputFirstName: this.inputFirstName
     });
   }
   
@@ -24,4 +27,9 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit(): void {
+    console.log(this.formSubmit.value);
+
+
+  }
 }

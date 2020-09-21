@@ -2,11 +2,8 @@
     <form [formGroup]="formSubmit" class="form-signin" (ngSubmit)="submit()">
         <h1 class="h3 mb-3">User Profile</h1>
         <input type="firstName" formControlName="inputFirstName" class="form-control" placeholder="First Name">
-        <label class="alert alert-danger" *ngIf="!this.formSubmit.controls.inputEmail.valid && this.formSubmit.controls.inputEmail.touched">First Name Required</label>
-        <input type="password" formControlName="inputPassword" class="form-control" placeholder="Password">
-        <label class="alert alert-danger" *ngIf="inputPasswordInvalid">Password Required</label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSubmit.valid">Sign In</button>
-        <label class="alert alert-danger" *ngIf="!validLogin">Invalid Username and/or Password</label>
+        <label class="alert alert-danger" *ngIf="!this.formSubmit.controls.inputFirstName.valid && this.formSubmit.controls.inputFirstName.touched">First Name Required</label>
+        
     </form>
     
 </div>
