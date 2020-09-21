@@ -7,6 +7,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { from } from 'rxjs';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
